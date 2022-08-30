@@ -18,7 +18,11 @@ app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('tiny'));
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false,
+  })
+);
 app.use('/public/images', express.static(__dirname + '/public/images'));
 
 // IINTEGRATE FROM routes FOLDER
