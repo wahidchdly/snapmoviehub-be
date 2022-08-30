@@ -4,4 +4,3 @@ node_modules
 # environment configuration
 .env
 package-lock.json
-public/images
