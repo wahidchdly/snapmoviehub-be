@@ -26,15 +26,19 @@ app.use(
 app.use('/public/images', express.static(__dirname + '/public/images'));
 
 // IINTEGRATE FROM routes FOLDER
-const movieRoutes = require('./routes/movies');
-const castRoutes = require('./routes/casts');
+const castCharactersRoutes = require('./routes/cast-characters');
+const categoriesRoutes = require('./routes/categories');
+const imagesRoutes = require('./routes/images');
+const moviesRoutes = require('./routes/movies');
 
 // INTEGRATE FROM FILE .env
 const api = process.env.API_URL;
 
 // ROUTERS
-app.use(`${api}/movie`, movieRoutes);
-app.use(`${api}/cast`, castRoutes);
+app.use(`${api}/casts-characters`, castCharactersRoutes);
+app.use(`${api}/categories`, categoriesRoutes);
+app.use(`${api}/images`, imagesRoutes);
+app.use(`${api}/movies`, moviesRoutes);
 
 // RUN SERVER AT PORT 3000
 const PORT = process.env.PORT || 3300;
